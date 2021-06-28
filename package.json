@@ -1,0 +1,27 @@
+{
+  "name": "givehub",
+  "version": "1.0.0",
+  "description": "## Description  Using everything we have learned over the past six units we will be creating a full-stack application. Working with our group our task is to create an application that comibines back end--with servers, databases, advanced APIs, and user authentication—-to the front end. The front end will also be built from scratch.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agonzalvez/givehub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agonzalvez/givehub/issues"
+  },
+  "homepage": "https://github.com/agonzalvez/givehub#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.4"
+  }
+}
