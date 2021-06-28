@@ -1,0 +1,102 @@
+[
+  {
+    "charity_name": "National Alliance on Mental Illness (NAMI)",
+    "focus": "Mental Ilness",
+    "description": "NAMI Urban Los Angeles (NULA) provides education about severe brain disorders, supports increased funding for research, and advocates for adequate health insurance, housing rehabilitation, and jobs for people with serious psychiatric illnesses in communities of color.",
+    "hq_location": "4305 Degnan Blvd., Suite 104 Los Angeles, CA 90008-4949",
+    "phone": "323-294-7814",
+    "email": "info@namiurbanla.org",
+    "website": "https://www.namiurbanla.org/",
+    "donation": "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=S9948SDETHRK6"
+  },
+  {
+    "charity_name": "National Institute of Mental Health (NIMH)",
+    "focus": "Understanding treatment of mental illnesses through basic and clinical research",
+    "description": "NIMH is the lead federal agency for research on mental disorders",
+    "hq_location": "6001 Executive Boulevard Rockville, MD 20852",
+    "phone": "1-866-615-6464",
+    "email": "nimhinfo@nih.gov",
+    "website": "https://www.nimh.nih.gov/about/connect-with-nimh/",
+    "donation": "https://www.nimh.nih.gov/about/connect-with-nimh/donate-to-mental-health-research"
+  },
+  {
+    "charity_name": "American Foundation for Suicide Prevention (ASFP)",
+    "focus": "Youth anxiety and depression",
+    "description": " The American Foundation for Suicide Prevention (AFSP) is a voluntary health organization that gives those affected by suicide a nationwide community empowered by research, education and advocacy to take action against this leading cause of death.",
+    "hq_location": "199 Water St. 11th Floor New York, NY 10038",
+    "phone": "1-888-333-2377",
+    "email": "info@afsp.org",
+    "website": "https://afsp.org/",
+    "donation": "https://afsp.donordrive.com/?_ga=2.107024706.175144139.1624749728-278995886.1624749728"
+  },
+  {
+    "charity_name": "The California Youth Crisis Line (CYCL)",
+    "focus": "Youth and families in crisis",
+    "description": "Professionally trained staff and volunteer counselors respond to 20,000 calls annually with crisis intervention counseling and resource referrals to service providers in the caller’s local community. We have access to more than 5,500 free or low-cost resources for youth and families across California.",
+    "hq_location": "California Coalition for Youth PO Box 161448 Sacramento, CA 95816",
+    "phone": "1-800-843-5200",
+    "email": "info@calyouth.org",
+    "website": "https://calyouth.org/cycl/?tmad=1e8de4a757b8",
+    "donation": "https://calyouth.org/donate/"
+  },
+  {
+    "charity_name": "Anxiety & Depression Association of America (ADAA)",
+    "focus": "Anxiety, depression, OCD, PTSD, and co-occurring disorder",
+    "description": "ADAA is an international nonprofit membership organization dedicated to the prevention, treatment, and cure of anxiety, depression, OCD, PTSD, and co-occurring disorders through education, practice, and research.",
+    "hq_location": "8701 Georgia Avenue Suite #412 Silver Spring, MD 20910",
+    "phone": "240-485-1030",
+    "email": "information@adaa.org",
+    "website": "https://adaa.org/",
+    "donation": "https://donate.adaa.org/give/322300/#!/donation/checkout"
+  },
+  {
+    "charity_name": "Project Sanctuary",
+    "focus": "Military Families",
+    "description": "Believing that when one person serves the whole family serves, Project Sanctuary takes a human-centered, solution-based approach to helping military families heal and move forward in life. Through innovative long-term programming focused on connectedness, we restore hope and empower families to recover and thrive.",
+    "hq_location": "PO Box 1563 Granby, CO 80446",
+    "phone": "855-838-8255",
+    "email": "info@projectsanctuary.us",
+    "website": "https://projectsanctuary.us/",
+    "donation": "https://projectsanctuary.us/donate/"
+  },
+  {
+    "charity_name": "To write love on her arms (TWLOHA)",
+    "focus": "Depression, addiction, self-injury and suicide",
+    "description": "To Write Love on Her Arms (TWLOHA) is a non-profit movement dedicated to presenting hope and finding help for people struggling with depression, addiction, self-injury, and suicide. TWLOHA exists to encourage, inform, inspire, and also to invest directly into treatment and recovery. To share the message of hope and help, TWLOHA responds to messages, meets people in their communities, operates a 'find help' tool, and provides funding to treatment and recovery efforts.",
+    "hq_location": "P.O. Box 2203 Melbourne, FL 32902",
+    "phone": "866-488-7386",
+    "email": "info@twloha.com",
+    "website": "https://twloha.com/",
+    "donation": "https://twloha.com/donate/"
+  },
+  {
+    "charity_name": "The Jed foundation",
+    "focus": "Emotional health for teens and young adults",
+    "description": "ED is a nonprofit that exists to protect emotional health and prevent suicide for our nation's teens and young adults. We're partnering with high schools and colleges to strengthen their mental health, substance abuse and suicide prevention programs and systems. We're equipping teens and young adults with the skills and knowledge to help themselves and each other. We're encouraging community awareness, understanding and action for young adult mental health.",
+    "hq_location": "The Jed Foundation 6 East 39th Street Suite 1204",
+    "phone": "1-800-273-TALK",
+    "email": "manuela@jedfoundation.org",
+    "website": "https://www.jedfoundation.org/",
+    "donation": "https://donate.jedfoundation.org/give/70447/?&_ga=2.139757307.936573464.1624819568-777389598.1624819568#!/donation/checkout"
+  },
+  {
+    "charity_name": "Mental Health Awareness",
+    "description": "Through nearly a century of advocacy at the national, state and local levels, Mental Health America has sought to protect the rights of individuals with mental illnesses; to undo decades of neglect and substandard care; to seek access to equitable, accessible and culturally competent services; and to seek new funding and reinvestment in both infrastructure and services in the community.",
+    "focus": "Mental Disorders",
+    "hq_location": "500 Montgomery Street Suite 820 Alexandria, VA 22314",
+    "phone": "(800)969-6642",
+    "email": "nimhinfo@nih.gov",
+    "website": "https://mhanational.org/",
+    "donation": "https://mhanational.org/donate-now"
+  },
+  {
+    "charity_name": "Mental Health Advocacy Services",
+    "focus": "Legal services for people with mental disabilities",
+    "description": "Mental Health Advocacy Services, Inc. provides free legal services to people with mental and developmental disabilities. Established in 1977, MHAS is sponsored by the Los Angeles County and Beverly Hills Bar Associations and the Mental Health Association in California. MHAS assists both children and adults, with an emphasis on obtaining government benefits and services, protecting rights, and fighting discrimination. ",
+    "hq_location": "3255 Wilshire Blvd #902 Los Angeles, CA 90010",
+    "phone": "213-389-2077",
+    "email": "info@mhas-la.org",
+    "website": "https://www.mhas-la.org/",
+    "donation": "https://www.mhas-la.org/donate"
+  }
+]
