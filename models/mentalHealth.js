@@ -15,16 +15,16 @@ Mhealth.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        focus: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         description: {
             type: DataTypes.STRING,
             allowNull: false
         },
         hq_location: {
             type: DataTypes.STRING,//this includes adress so needs int type too?
-            allowNull: false
-        },
-        contactperson: {
-            type: DataTypes.INTEGER,
             allowNull: false
         },
         phone: {
@@ -40,15 +40,22 @@ Mhealth.init(
             allowNull: false
         },
         donation: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,//website link to donate 
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            refrences: {
+               model: 'Mhealth',
+               key: 'id',
+            },
+        }
 },
     {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'mentalhealth',
     }
 );
 
