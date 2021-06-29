@@ -9,7 +9,7 @@ const womensData = require('./lgbtData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
+//need to copy all other grps
   const lgbt = await Lgbt.bulkCreate(lgbtData, {
     individualHooks: true,
     returning: true,
