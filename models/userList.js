@@ -10,7 +10,8 @@ userList.init (
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-        },_id
+        },
+        
         charity_id: {
             type: DataTypes.STRING,
             allowNull: false,type: DataTypes.INTEGER,
