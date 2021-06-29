@@ -1,18 +1,27 @@
-//or charities
 const Charities = require('./Charities');
-//const lgbt = require('./lbgt');
-//const mentalHealth = require('./mentalHealth');
-//const socialJustice = require('./socialJustice');
-//const womensData = require('./womensData');
-const UserProfile = require('./userPrfofile');
+const UserProfile = require('./userProfile');
+const UserList = require('./userList');
 
-userProfile.hasMany(Charities, {
-    foreignKey: 'charity_id',
-    onDelete: 'CASCADE'
+
+
+ UserProfile.belongsToMany(Charities, {
+    // Define the third table needed to store the foreign keys
+    through: {
+      model: UserList,
+      unique: false
+    },
+    // Define an alias for when data is retrieved
+    as: 'favorite_charities'
   });
   
-  Charities.belongsTo(userProfile, {
-    foreignKey: 'charities_id'
+  Charities.belongsToMany(UserProfile, {
+    // Define the third table needed to store the foreign keys
+    through: {
+      model: UserList,
+      unique: false
+    },
+    // Define an alias for when data is retrieved
+    as: 'charity_member'
   });
-  
-  module.exports = { User, Charities };
+
+  module.exports = { UserProfile, UserList, Charities };
