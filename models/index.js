@@ -1,2 +1,4 @@
-const Lgbt = require('./Lbgt');
+const Charities = require('./Charities');
 
+
+module.exports = { Charities }

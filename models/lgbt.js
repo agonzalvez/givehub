@@ -15,6 +15,10 @@ Lgbt.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         focus: {
             type: DataTypes.STRING,
             allowNull: false,
