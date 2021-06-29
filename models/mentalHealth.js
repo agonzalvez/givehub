@@ -28,7 +28,7 @@ Mhealth.init(
             allowNull: false
         },
         phone: {
-            type: DataTypes.INTEGER, //format phonenumber
+            type: DataTypes.INTEGER, 
             allowNull: false
         },
         email: {
