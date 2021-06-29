@@ -7,3 +7,6 @@ router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;
+
+const userRoutes = require('./userRoutes');
+
