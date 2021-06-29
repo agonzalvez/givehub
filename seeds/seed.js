@@ -1,8 +1,11 @@
 const sequelize = require('../config/connection');
 
-const { Lgbt } = require('../models/Lgbt');
+const { Lgbt, mentalHealth, socialJustice, mentalHealth} = require('../models/Lgbt');
 
 const lgbtData = require('./lgbtData.json');
+const mhealth = require('./lgbtData.json');
+const socialJustice_Data_seeds = require('./lgbtData.json');
+const womensData = require('./lgbtData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });

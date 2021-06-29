@@ -2,9 +2,10 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
-
+//if using herouku
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
+//not using heroku
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
