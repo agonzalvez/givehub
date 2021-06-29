@@ -39,6 +39,9 @@ User.init(
         len: [8],
       },
     },
+    charity_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
   },
   {
     hooks: {
@@ -59,4 +62,4 @@ User.init(
   }
 );
 
-module.exports = User;
+module.exports = userProfile;
