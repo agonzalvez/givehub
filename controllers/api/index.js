@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-const apiRoutes = require('./api');
+const charityRoutes = require('./charityRoutes');
 
-router.use('/api', apiRoutes);
+router.use('/charity', charityRoutes);
 
 module.exports = router;
 

@@ -13,16 +13,30 @@ userList.init (
         },
         
         charity_id: {
-            type: DataTypes.STRING,
-            allowNull: false,type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
+            references: {
+                model: "charities",
+                key: "id",
+                unique: false
+            }
         },
-        charity_type: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },          
+        user_id: {
+           type: DataTypes.INTEGER,
+           allowNull: false,
+           references: {
+               model: "user",
+               key: "id",
+               unique: false
+           }
+        }          
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user_list',
     }
 );
 

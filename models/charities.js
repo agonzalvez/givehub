@@ -19,6 +19,11 @@ Charities.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+
         description: {
             type: DataTypes.STRING,
         },
@@ -44,7 +49,7 @@ Charities.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'lgbt',
+        modelName: 'charities',
     }
 );
 
