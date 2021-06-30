@@ -66,4 +66,27 @@ router.get('/login', (req, res) => {
   }
   res.render('login');
 });
+
+router.get('/lgbtq', async (req, res) => {
+  try {
+    const dbcharitiesData = await Charities.findAll({
+      where : {
+        type: "LGBTQ"
+      }
+    });
+    // data serialization
+    const charities = dbcharitiesData.map((charities) =>
+      charities.get({ plain: true })
+    );
+    //pass serialized data and session flag into template
+    res.render('lgbt', {
+      charities,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
