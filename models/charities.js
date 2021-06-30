@@ -25,7 +25,7 @@ Charities.init(
         },
 
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(5000),
         },
         phone: {
             type: DataTypes.STRING,
@@ -40,7 +40,7 @@ Charities.init(
             allowNull: false,
         },
         donation: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(5000),
             allowNull: false,
         },
     },
