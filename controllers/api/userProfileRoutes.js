@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { UserProfile } = require('../models');
+const { UserProfile, Charities, UserList } = require('../../models');
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
@@ -61,6 +61,25 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+
+
+// GET a single location
+router.get('/:id', async (req, res) => {
+    try {
+      const userProfileData = await UserProfile.findByPk(req.params.id, {
+     include: [{model: Charities, through: UserList, as :"favorite_charities"}]
+      });
+        if (!userProfileData) {
+        res.status(404).json({ message: 'No data found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(userProfileData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 module.exports = router;
 
 

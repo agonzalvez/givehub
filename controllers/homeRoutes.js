@@ -1,21 +1,22 @@
 const router = require('express').Router();
-const { Charities, UserProfile } = require('../models');
+const {Charities, UserProfile} = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
-// GET all charities
+// GET all charities for homepage and join with user data
 router.get('/', async (req, res) => {
   try {
-    // Get all charities and JOIN with user data
     const dbcharitiesData = await Charities.findAll({
       include: [
         {
-          model: UserProfile,
-          attributes: ['first_name', 'last_name'],
+          model: UserProfile, 
+        attributes: ['first_name', 'last_name'], as :"charity_member"
         },
       ],
     });
     // data serialization
-    const charities = dbcharitiesData.map((charities) => project.get({ plain: true }));
+    const charities = dbcharitiesData.map((charities) =>
+      charities.get({ plain: true })
+    );
     //pass serialized data and session flag into template
     res.render('homepage', {
       charities,
@@ -28,13 +29,13 @@ router.get('/', async (req, res) => {
 });
 // GET one charity
 // Use the custom middleware before allowing the user to access the charity
-// not sure if we want to use the param code for galleries?
-router.get('/charities/:id',  async (req, res) => {
+//not sure if we want to use the param code for galleries?
+router.get('/charities/:id', async (req, res) => {
   try {
-    const dbcharitiesData = await Charities.findByPk(req.params.id );
+    const dbcharitiesData = await Charities.findByPk(req.params.id);
     const charities = dbcharitiesData.get({ plain: true });
     // res.render('charities', { charities, loggedIn: req.session.loggedIn });
-    res.json(charities)
+    res.render("charity", charities)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -58,10 +59,9 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-// If the user is already logged in, redirect the request to another route
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
   res.render('login');

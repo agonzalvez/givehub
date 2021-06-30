@@ -39,10 +39,10 @@ UserProfile.init(
         len: [8],
       },
     },
-    charity_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    }
+    //charity_name: {
+    //  type: DataTypes.STRING,
+   //   allowNull: false,
+   // }
   },
 
   {
