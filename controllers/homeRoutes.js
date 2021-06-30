@@ -89,4 +89,70 @@ router.get('/lgbtq', async (req, res) => {
   }
 });
 
+router.get('/womens-rights', async (req, res) => {
+  try {
+    const dbcharitiesData = await Charities.findAll({
+      where : {
+        type: "Women's Rights"
+      }
+    });
+    // data serialization
+    const charities = dbcharitiesData.map((charities) =>
+      charities.get({ plain: true })
+    );
+    //pass serialized data and session flag into template
+    res.render('women', {
+      charities,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/mental-health', async (req, res) => {
+  try {
+    const dbcharitiesData = await Charities.findAll({
+      where : {
+        type: "Mental Health"
+      }
+    });
+    // data serialization
+    const charities = dbcharitiesData.map((charities) =>
+      charities.get({ plain: true })
+    );
+    //pass serialized data and session flag into template
+    res.render('mental', {
+      charities,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/social-justice', async (req, res) => {
+  try {
+    const dbcharitiesData = await Charities.findAll({
+      where : {
+        type: "Social Justice"
+      }
+    });
+    // data serialization
+    const charities = dbcharitiesData.map((charities) =>
+      charities.get({ plain: true })
+    );
+    //pass serialized data and session flag into template
+    res.render('social', {
+      charities,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
