@@ -8,8 +8,8 @@ router.get('/', async (req, res) => {
     const dbcharitiesData = await Charities.findAll({
       include: [
         {
-          model: UserProfile,
-        attributes: ['first_name', 'last_name'],
+          model: UserProfile, 
+        attributes: ['first_name', 'last_name'], as :"charity_member"
         },
       ],
     });
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
     );
     //pass serialized data and session flag into template
     res.render('homepage', {
-      charitiies,
+      charities,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -30,12 +30,12 @@ router.get('/', async (req, res) => {
 // GET one charity
 // Use the custom middleware before allowing the user to access the charity
 //not sure if we want to use the param code for galleries?
-router.get('/charities/:id',  async (req, res) => {
+router.get('/charities/:id', async (req, res) => {
   try {
-    const dbcharitiesData = await Charities.findByPk(req.params.id );
+    const dbcharitiesData = await Charities.findByPk(req.params.id);
     const charities = dbcharitiesData.get({ plain: true });
     // res.render('charities', { charities, loggedIn: req.session.loggedIn });
-    res.json(charities)
+    res.render("charity", charities)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
