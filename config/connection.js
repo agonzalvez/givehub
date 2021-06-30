@@ -8,13 +8,10 @@ if (process.env.JAWSDB_URL) {
 //only these statements if not using heroku
 } else {
   sequelize = new Sequelize(
-   // process.env.DB_NAME,
-   // process.env.DB_USER,
-  //process.env.DB_PASSWORD,
+   process.env.DB_NAME,
+   process.env.DB_USER,
+  process.env.DB_PASSWORD,
 
-    "givehub_db",
-    "root",
-    "password",
     {
       host: 'localhost',
       dialect: 'mysql',
