@@ -40,12 +40,11 @@ Charities.init(
             allowNull: false,
         },
         donation: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(5000),
             allowNull: false,
         },
     },
-    {
-        sequelize,
+    {        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,

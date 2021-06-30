@@ -1,25 +1,24 @@
 const router = require('express').Router();
-const {Charities, UserProfile} = require('../models');
+const { Charities, UserProfile } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
-// GET all charities for homepage and join with user data
+// GET all charities
 router.get('/', async (req, res) => {
   try {
+    // Get all charities and JOIN with user data
     const dbcharitiesData = await Charities.findAll({
       include: [
         {
           model: UserProfile,
-        attributes: ['first_name', 'last_name'],
+          attributes: ['first_name', 'last_name'],
         },
       ],
     });
     // data serialization
-    const charities = dbcharitiesData.map((charities) =>
-      charities.get({ plain: true })
-    );
+    const charities = dbcharitiesData.map((charities) => project.get({ plain: true }));
     //pass serialized data and session flag into template
     res.render('homepage', {
-      charitiies,
+      charities,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -29,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 // GET one charity
 // Use the custom middleware before allowing the user to access the charity
-//not sure if we want to use the param code for galleries?
+// not sure if we want to use the param code for galleries?
 router.get('/charities/:id',  async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findByPk(req.params.id );
@@ -59,9 +58,10 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+// If the user is already logged in, redirect the request to another route
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/profile');
     return;
   }
   res.render('login');
