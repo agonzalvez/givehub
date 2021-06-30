@@ -49,9 +49,9 @@ Charities.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'charities',
+        modelName: 'Charities',
     }
 );
 
     
-module.exports =Charities;
+module.exports = Charities;
