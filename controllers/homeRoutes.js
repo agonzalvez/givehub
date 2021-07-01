@@ -3,7 +3,7 @@ const {Charities, UserProfile} = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 // GET all charities for homepage and join with user data
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       include: [
