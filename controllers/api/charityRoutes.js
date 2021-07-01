@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
         }
       });
   
-      if (!charityDataa) {
+      if (!charityData) {
         res.status(404).json({ message: 'No data found with this id!' });
         return;
       }
@@ -54,4 +54,4 @@ router.get('/:id', async (req, res) => {
     }
   });
 
-  module.exports = router;
+module.exports = router;

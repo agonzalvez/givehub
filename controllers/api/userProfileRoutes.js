@@ -3,7 +3,7 @@ const { UserProfile, Charities, UserList } = require('../../models');
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await user.create({
+    const dbUserData = await UserProfile.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
@@ -51,6 +51,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // Logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
@@ -62,8 +63,6 @@ router.post('/logout', (req, res) => {
   }
 });
 
-
-
 // GET a single location
 router.get('/:id', async (req, res) => {
     try {
@@ -74,25 +73,9 @@ router.get('/:id', async (req, res) => {
         res.status(404).json({ message: 'No data found with this id!' });
         return;
       }
-  
       res.status(200).json(userProfileData);
     } catch (err) {
       res.status(500).json(err);
     }
   });
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

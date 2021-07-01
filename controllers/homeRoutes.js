@@ -3,7 +3,7 @@ const {Charities, UserProfile} = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 // GET all charities for homepage and join with user data
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       include: [
@@ -44,33 +44,46 @@ router.get('/charities/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-//not sure if profile should be used?
-router.get('/profile', withAuth, async (req, res) => {
+// router.get('/home', async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await UserProfile.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Charities }],
+//     });
+//     const user = userData.get({ plain: true });
+//     res.render("user-homepage", {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get('/home', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await UserProfile.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Charities }],
-    });
-    const user = userData.get({ plain: true });
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
+    // const userData = await UserProfile.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    //   include: [{ model: Charities }],
+    // });
+    // const user = userData.get({ plain: true });
+    res.render("user-homepage");
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
   res.render('login');
 });
 
-router.get('/lgbtq', withAuth, async (req, res) => {
+router.get('/lgbtq', async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -92,7 +105,7 @@ router.get('/lgbtq', withAuth, async (req, res) => {
   }
 });
 
-router.get('/womens-rights', withAuth, async (req, res) => {
+router.get('/womens-rights', async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -114,7 +127,7 @@ router.get('/womens-rights', withAuth, async (req, res) => {
   }
 });
 
-router.get('/mental-health', withAuth, async (req, res) => {
+router.get('/mental-health', async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -136,7 +149,7 @@ router.get('/mental-health', withAuth, async (req, res) => {
   }
 });
 
-router.get('/social-justice', withAuth, async (req, res) => {
+router.get('/social-justice', async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
