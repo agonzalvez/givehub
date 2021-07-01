@@ -61,7 +61,7 @@ router.get('/charities/:id', async (req, res) => {
 //   }
 // });
 
-router.get('/home', async (req, res) => {
+router.get('/home', withAuth, (req, res) => {
   try {
     // Find the logged in user based on the session ID
     // const userData = await UserProfile.findByPk(req.session.user_id, {
@@ -83,7 +83,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/lgbtq', async (req, res) => {
+router.get('/lgbtq', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -105,7 +105,7 @@ router.get('/lgbtq', async (req, res) => {
   }
 });
 
-router.get('/womens-rights', async (req, res) => {
+router.get('/womens-rights', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -127,7 +127,7 @@ router.get('/womens-rights', async (req, res) => {
   }
 });
 
-router.get('/mental-health', async (req, res) => {
+router.get('/mental-health', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -149,7 +149,7 @@ router.get('/mental-health', async (req, res) => {
   }
 });
 
-router.get('/social-justice', async (req, res) => {
+router.get('/social-justice', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
