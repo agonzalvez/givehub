@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // GET one charity
 // Use the custom middleware before allowing the user to access the charity
 //not sure if we want to use the param code for galleries?
@@ -41,6 +42,7 @@ router.get('/charities/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // Use withAuth middleware to prevent access to route
 //not sure if profile should be used?
 router.get('/profile', withAuth, async (req, res) => {
@@ -59,6 +61,7 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -67,7 +70,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/lgbtq', async (req, res) => {
+router.get('/lgbtq', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -89,7 +92,7 @@ router.get('/lgbtq', async (req, res) => {
   }
 });
 
-router.get('/womens-rights', async (req, res) => {
+router.get('/womens-rights', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -111,7 +114,7 @@ router.get('/womens-rights', async (req, res) => {
   }
 });
 
-router.get('/mental-health', async (req, res) => {
+router.get('/mental-health', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
@@ -133,7 +136,7 @@ router.get('/mental-health', async (req, res) => {
   }
 });
 
-router.get('/social-justice', async (req, res) => {
+router.get('/social-justice', withAuth, async (req, res) => {
   try {
     const dbcharitiesData = await Charities.findAll({
       where : {
